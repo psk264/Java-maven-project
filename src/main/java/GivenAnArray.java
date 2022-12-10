@@ -104,7 +104,8 @@ public class GivenAnArray {
      * @param nums > integer array
      * @return boolean > true = found atleast two instance, false = no duplicate found, distinct numbers in the array
      *
-     * Time Complexity O(n)
+     * Time Complexity O(n), Memory or Space complexity O(n)
+     * Note - we can use the HashSet instead of HashMap since both have same space complexity O(n)
      */
     static boolean ContainsDuplicate(int[] nums){
         HashMap<Integer, Integer> temp = new HashMap<>();
@@ -115,5 +116,29 @@ public class GivenAnArray {
             temp.put(i, nums[i]);
         }
         return false;
+    }
+
+    /**
+     * @param nums >> input array of integers
+     * @return array of product of input array with itself excluding the current element.
+     *
+     * Time Complexity O(n), space complexity for output array O(n)
+     */
+    static int[] ProductOfItself(int[] nums){
+        int[] answer = new int[nums.length];
+      //  Arrays.fill(answer,1);
+        int prefix=1, postfix=1;
+        HashMap<Integer, Integer> productMap = new HashMap<>();
+
+        for(int index=0;index<nums.length; index++){
+            answer[index] = prefix;
+            prefix *= nums[index];
+        }
+
+        for(int index=nums.length-1;index>=0; index--){
+            answer[index] *= postfix;
+            postfix *= nums[index];
+        }
+        return answer;
     }
 }

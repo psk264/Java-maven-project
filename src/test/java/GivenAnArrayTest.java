@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -43,6 +44,17 @@ class GivenAnArrayTest {
                 () -> assertEquals(false, GivenAnArray.ContainsDuplicate(new int[] {1}))
 
 
+        );
+    }
+    @Disabled
+    @Test
+    void ProductOfItselfTest(){
+        assertAll(
+                () -> assertEquals(new int[] {48, 24, 12, 8, 48}, GivenAnArray.ProductOfItself(new int[] {1,2,4,6,1})),
+                () -> assertEquals(new int[] {480, 240, 120, 80, 48}, GivenAnArray.ProductOfItself(new int[] {1,2,4,6,10})),
+                () -> assertEquals(new int[] {24, 12, 12, 4, 24}, GivenAnArray.ProductOfItself(new int[] {1,2,2,6,1})),
+                () -> assertEquals(new int[] {1}, GivenAnArray.ProductOfItself(new int[] {1})),
+                () -> assertEquals(new int[] {2, 1}, GivenAnArray.ProductOfItself((new int[]{1,2})))
         );
     }
 }
