@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LeetCodeSolution {
+public class GivenAnArray {
 
     /**
      * @param nums >> sorted int array

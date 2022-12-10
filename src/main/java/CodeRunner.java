@@ -3,8 +3,6 @@
 //{ } ==> defines the class body
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 
 public class CodeRunner {
 
@@ -19,24 +17,24 @@ public class CodeRunner {
 //
 //        System.out.println(myTotal);
 
-        System.out.println(LeetCodeSolution.BinarySearch( new int[]{-1,0,3,5,9,12},9));
-        System.out.println(LeetCodeSolution.BinarySearch(new int[] {5,6,7,9,24,31}, 9));
-        int[] answer = LeetCodeSolution.FindSumDigitTarget(new int[]{2,1,5,3},4);
+        System.out.println(GivenAnArray.BinarySearch( new int[]{-1,0,3,5,9,12},9));
+        System.out.println(GivenAnArray.BinarySearch(new int[] {5,6,7,9,24,31}, 9));
+        int[] answer = GivenAnArray.FindSumDigitTarget(new int[]{2,1,5,3},4);
         System.out.format("%d, %d",answer[0], answer[1]);
         System.out.println();
-        answer = LeetCodeSolution.FindSumDigitTarget(new int[]{5, 6, 1, 9, 4, 3}, 8);
+        answer = GivenAnArray.FindSumDigitTarget(new int[]{5, 6, 1, 9, 4, 3}, 8);
         System.out.format("%d, %d",answer[0], answer[1]);
         System.out.println();
-        answer = LeetCodeSolution.FindBuyandSellPrice(new int[] {7,1,5,3,6,4});
+        answer = GivenAnArray.FindBuyandSellPrice(new int[] {7,1,5,3,6,4});
         System.out.format("%d, %d",answer[0], answer[1]);
         System.out.println();
-       ArrayList ans = LeetCodeSolution.runningSum(new int[]{1,2,3,4});
+       ArrayList ans = GivenAnArray.runningSum(new int[]{1,2,3,4});
         for(int i=0;i<ans.size();i++)
             System.out.format("%d ", ans.get(i));
         System.out.println();
-        System.out.println(LeetCodeSolution.ContainsDuplicate(new int[] {5,6,7,9,24,31}));
-        System.out.println(LeetCodeSolution.ContainsDuplicate(new int[] {5,6,7,9,24,31,9}));
-        System.out.println(LeetCodeSolution.ContainsDuplicate(new int[] {5,6,7,7,24,7}));
+        System.out.println(GivenAnArray.ContainsDuplicate(new int[] {5,6,7,9,24,31}));
+        System.out.println(GivenAnArray.ContainsDuplicate(new int[] {5,6,7,9,24,31,9}));
+        System.out.println(GivenAnArray.ContainsDuplicate(new int[] {5,6,7,7,24,7}));
 
 
 
