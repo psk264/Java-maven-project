@@ -51,3 +51,13 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
         run: mvn -B test --file pom.xml
+
+      - name: JUNIT Test Report Tool
+    # You may pin to the exact commit or the version.
+    # uses: JohnMeyerhoff/JunitAnnotations@0b633bca6b09f3301a6fa678310c53e754e7cf16
+        uses: JohnMeyerhoff/JunitAnnotations@v1.2.0
+        with:
+      # [Path] The location of the folder(s) containing your code files
+        source_dir: src/main/java/GivenAnArray.java
+      # [Path] The location of the folder containing your junit, this should not be set unless you provide your own version
+        junit_dir: src/test/java/GivenAnArrayTest.java
