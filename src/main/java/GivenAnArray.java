@@ -160,4 +160,27 @@ public class GivenAnArray {
         }
         return maxSum;
     }
+
+    /**
+     * @param nums >> given an integer array
+     * @return int max product of subarray
+     *
+     * Time complexity O(n)
+     */
+    static int MaxProductOfSubArray(int[] nums){
+        int productAns = Arrays.stream(nums).max().getAsInt();
+        int curMin=1, curMax=1;
+        for (int n: nums) {
+            if(n==0) continue;
+            int temp = curMax;
+            curMax = Math.max(n*curMax, n* curMin);
+            curMax = Math.max(curMax, n);
+
+            curMin = Math.min(n*temp, n* curMin);
+            curMin = Math.min(curMin, n);
+            productAns = Math.max(curMax,productAns);
+        }
+
+        return productAns;
+    }
 }

@@ -35,5 +35,8 @@ public class CodeRunner {
         System.out.println(Arrays.toString(productOfItself));
 
         System.out.println(GivenAnArray.MaximumSumOfSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
+
+        System.out.println(GivenAnArray.MaxProductOfSubArray(new int[]{2,3,-2,4}));
+
     }
 }

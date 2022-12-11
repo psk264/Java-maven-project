@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,10 +37,10 @@ class GivenAnArrayTest {
     @Test
     void ContainsDuplicateTest(){
         assertAll(
-                () -> assertEquals(true, GivenAnArray.ContainsDuplicate(new int[] {1,2,4,6,1})),
-                () -> assertEquals(false, GivenAnArray.ContainsDuplicate(new int[] {1,2,4,6,10})),
-                () -> assertEquals(true, GivenAnArray.ContainsDuplicate(new int[] {1,2,2,6,1})),
-                () -> assertEquals(false, GivenAnArray.ContainsDuplicate(new int[] {1}))
+                () -> assertTrue(GivenAnArray.ContainsDuplicate(new int[] {1,2,4,6,1})),
+                () -> assertTrue(GivenAnArray.ContainsDuplicate(new int[] {1,2,4,6,10})),
+                () -> assertTrue(GivenAnArray.ContainsDuplicate(new int[] {1,2,2,6,1})),
+                () -> assertTrue(GivenAnArray.ContainsDuplicate(new int[] {1}))
 
 
         );
@@ -65,6 +64,16 @@ class GivenAnArrayTest {
                 () -> assertEquals(4, GivenAnArray.MaximumSumOfSubArray(new int[]{-2,-1,-3,4,-1,-2,-1,-5,-4})),
                 () -> assertEquals(-1, GivenAnArray.MaximumSumOfSubArray(new int[]{-2,-1,-3,-4,-1,-2,-1,-5,-4})),
                 () -> assertEquals(0, GivenAnArray.MaximumSumOfSubArray(new int[]{-2,-1,0}))
+                );
+    }
+
+    @Test
+    void MaxProductOfSubArrayTest(){
+        assertAll(
+                () -> assertEquals(6, GivenAnArray.MaxProductOfSubArray(new int[] {2,3,-2,4})),
+                () -> assertEquals(0, GivenAnArray.MaxProductOfSubArray(new int[] {0})),
+                () -> assertEquals(1, GivenAnArray.MaxProductOfSubArray(new int[] {1,-1})),
+                () -> assertEquals(1, GivenAnArray.MaxProductOfSubArray(new int[] {1,0}))
                 );
     }
 }
