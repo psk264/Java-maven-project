@@ -57,4 +57,4 @@ jobs:
       # [Path] The location of the folder(s) containing your code files
        # source_dir: src/test/java/GivenAnArrayTest.java
       # [Path] The location of the folder containing your junit, this should not be set unless you provide your own version
-        junit_dir: src/test/java/GivenAnArrayTest.java
+       # junit_dir: src/test/java/GivenAnArrayTest.java
