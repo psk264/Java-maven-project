@@ -55,6 +55,6 @@ jobs:
         uses: JohnMeyerhoff/JunitAnnotations@v1.2.0
         with:
       # [Path] The location of the folder(s) containing your code files
-        source_dir: src/main/java/GivenAnArray.java
+        source_dir: src/test/java/GivenAnArrayTest.java
       # [Path] The location of the folder containing your junit, this should not be set unless you provide your own version
         junit_dir: src/test/java/GivenAnArrayTest.java
