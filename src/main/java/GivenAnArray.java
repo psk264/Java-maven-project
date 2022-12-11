@@ -42,7 +42,7 @@ public class GivenAnArray {
  */
      static int[] FindSumDigitTarget(int [] nums, int target){
         int[] returnArr = {-1,-1};  //Don't really have to define this array, it could save memory
-        HashMap<Integer, Integer> temp = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> temp = new HashMap<>();
 
         for (int index =0; index<nums.length; index++) {
             int diff = target - nums[index];
@@ -63,9 +63,7 @@ public class GivenAnArray {
     /**
      * @param prices int array of prices on consecutive days
      * @return int array of buy and sell price, the buy price (loweset we can buy) and sell price (highest we can sell)
-     *
      * Memory o(1), Time complexity O(n)
-     *
      * Example: {7,1,5,3,6,4} >> return: {1,6}
      */
     static int[] FindBuyandSellPrice(int[] prices){
@@ -182,5 +180,34 @@ public class GivenAnArray {
         }
 
         return productAns;
+    }
+
+    /**
+     * Given an array of integers nums, calculate the pivot index of this array.
+     * The pivot index is the index where the sum of all the numbers strictly to the left of the index is equal to the sum of all the numbers strictly to the index's right.
+     * If the index is on the left edge of the array, then the left sum is 0 because there are no elements to the left. This also applies to the right edge of the array.
+     * Return the leftmost pivot index. If no such index exists, return -1.
+     *
+     * @param nums >> integer array
+     * @return int value pivot index
+     */
+    static int pivotIndex(int[] nums) {
+        int totalSum = Arrays.stream(nums).sum();
+        int pIndex=-1;
+        int lSum=0, lIndex=0;
+
+        while(lIndex<nums.length){
+            int rSum=totalSum-nums[lIndex]-lSum;
+
+            if(lSum == rSum){
+                return lIndex;
+            }
+            else{
+                lSum +=nums[lIndex];
+                lIndex++;
+            }
+
+        }
+        return pIndex;
     }
 }

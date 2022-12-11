@@ -38,5 +38,11 @@ public class CodeRunner {
 
         System.out.println(GivenAnArray.MaxProductOfSubArray(new int[]{2,3,-2,4}));
 
+        System.out.println(GivenAnArray.pivotIndex(new int[]{1,7,3,6,5,6}));  //3
+        System.out.println(GivenAnArray.pivotIndex(new int[]{2,1,-1})); //0
+        System.out.println(GivenAnArray.pivotIndex(new int[]{-1,-1,-1,-1,-1,0}));  //2
+        System.out.println(GivenAnArray.pivotIndex(new int[]{-1,-1}));  //-1
+
+
     }
 }

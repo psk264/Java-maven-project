@@ -38,9 +38,9 @@ class GivenAnArrayTest {
     void ContainsDuplicateTest(){
         assertAll(
                 () -> assertTrue(GivenAnArray.ContainsDuplicate(new int[] {1,2,4,6,1})),
-                () -> assertTrue(GivenAnArray.ContainsDuplicate(new int[] {1,2,4,6,10})),
+                () -> assertFalse(GivenAnArray.ContainsDuplicate(new int[] {1,2,4,6,10})),
                 () -> assertTrue(GivenAnArray.ContainsDuplicate(new int[] {1,2,2,6,1})),
-                () -> assertTrue(GivenAnArray.ContainsDuplicate(new int[] {1}))
+                () -> assertFalse(GivenAnArray.ContainsDuplicate(new int[] {1}))
 
 
         );
@@ -75,5 +75,16 @@ class GivenAnArrayTest {
                 () -> assertEquals(1, GivenAnArray.MaxProductOfSubArray(new int[] {1,-1})),
                 () -> assertEquals(1, GivenAnArray.MaxProductOfSubArray(new int[] {1,0}))
                 );
+    }
+
+    @Test
+    void pivotIndexTest(){
+        assertAll(
+                () -> assertEquals(3, GivenAnArray.pivotIndex(new int[]{1,7,3,6,5,6})),
+        () -> assertEquals(0, GivenAnArray.pivotIndex(new int[]{2,1,-1})),
+        () -> assertEquals(2, GivenAnArray.pivotIndex(new int[]{-1,-1,-1,-1,-1,0})),
+        () -> assertEquals(-1, GivenAnArray.pivotIndex(new int[]{-1,-1}))
+
+        );
     }
 }
