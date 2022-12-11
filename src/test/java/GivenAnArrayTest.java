@@ -46,15 +46,25 @@ class GivenAnArrayTest {
 
         );
     }
-    @Disabled
+
     @Test
     void ProductOfItselfTest(){
         assertAll(
-                () -> assertEquals(new int[] {48, 24, 12, 8, 48}, GivenAnArray.ProductOfItself(new int[] {1,2,4,6,1})),
-                () -> assertEquals(new int[] {480, 240, 120, 80, 48}, GivenAnArray.ProductOfItself(new int[] {1,2,4,6,10})),
-                () -> assertEquals(new int[] {24, 12, 12, 4, 24}, GivenAnArray.ProductOfItself(new int[] {1,2,2,6,1})),
-                () -> assertEquals(new int[] {1}, GivenAnArray.ProductOfItself(new int[] {1})),
-                () -> assertEquals(new int[] {2, 1}, GivenAnArray.ProductOfItself((new int[]{1,2})))
+                () -> assertArrayEquals(new int[]{48, 24, 12, 8, 48}, GivenAnArray.ProductOfItself(new int[] {1,2,4,6,1})),
+                () -> assertArrayEquals(new int[]{480, 240, 120, 80, 48}, GivenAnArray.ProductOfItself(new int[] {1,2,4,6,10})),
+                () -> assertArrayEquals(new int[] {24, 12, 12, 4, 24}, GivenAnArray.ProductOfItself(new int[] {1,2,2,6,1})),
+                () -> assertArrayEquals(new int[] {1}, GivenAnArray.ProductOfItself(new int[] {1})),
+                () -> assertArrayEquals(new int[] {2, 1}, GivenAnArray.ProductOfItself((new int[]{1,2})))
         );
+    }
+
+    @Test
+    void MaxSumOfSubArrayTest() {
+        assertAll(
+                () -> assertEquals(6, GivenAnArray.MaximumSumOfSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4})),
+                () -> assertEquals(4, GivenAnArray.MaximumSumOfSubArray(new int[]{-2,-1,-3,4,-1,-2,-1,-5,-4})),
+                () -> assertEquals(-1, GivenAnArray.MaximumSumOfSubArray(new int[]{-2,-1,-3,-4,-1,-2,-1,-5,-4})),
+                () -> assertEquals(0, GivenAnArray.MaximumSumOfSubArray(new int[]{-2,-1,0}))
+                );
     }
 }

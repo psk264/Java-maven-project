@@ -128,7 +128,6 @@ public class GivenAnArray {
         int[] answer = new int[nums.length];
       //  Arrays.fill(answer,1);
         int prefix=1, postfix=1;
-        HashMap<Integer, Integer> productMap = new HashMap<>();
 
         for(int index=0;index<nums.length; index++){
             answer[index] = prefix;
@@ -140,5 +139,25 @@ public class GivenAnArray {
             postfix *= nums[index];
         }
         return answer;
+    }
+
+    /**
+     * @param nums -> give an integer array
+     * @return int maxSum of a subarray in the given array
+     *
+     * Time Complexity O(n), space complexity O(1)
+     */
+    static int MaximumSumOfSubArray(int[] nums){
+        int maxSum = nums[0];
+        int curSum=0;
+
+        for (int n: nums) {
+            if(curSum<0){
+                curSum = 0;
+            }
+            curSum += n;
+            maxSum = Math.max(curSum,maxSum);
+        }
+        return maxSum;
     }
 }
