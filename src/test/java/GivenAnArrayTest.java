@@ -83,7 +83,7 @@ class GivenAnArrayTest {
                 () -> assertEquals(3, GivenAnArray.pivotIndex(new int[]{1,7,3,6,5,6})),
         () -> assertEquals(0, GivenAnArray.pivotIndex(new int[]{2,1,-1})),
         () -> assertEquals(2, GivenAnArray.pivotIndex(new int[]{-1,-1,-1,-1,-1,0})),
-        () -> assertEquals(0, GivenAnArray.pivotIndex(new int[]{-1,-1}))
+        () -> assertEquals(-1, GivenAnArray.pivotIndex(new int[]{-1,-1}))
 
         );
     }
