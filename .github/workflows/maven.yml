@@ -40,13 +40,16 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
+      - name: Cache Maven packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
       - name: Run tests with Maven
-#        working-directory: Java-maven-project
-#        run: mvn -B test --file pom.xml
-        run: mvn -B verify
+        run: mvn -B test --file pom.xml
       - name: JUNIT Test Report Tool
         uses: mikepenz/action-junit-report@v3
         if: always() # always run even if the previous step fails
         with:
           report_paths: '**/build/test-results/test/TEST-*.xml'
-
