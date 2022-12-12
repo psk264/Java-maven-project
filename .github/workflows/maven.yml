@@ -41,7 +41,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Run tests with Maven
-        working-directory: github-actions-java-maven
+#        working-directory: Java-maven-project
 #        run: mvn -B test --file pom.xml
         run: mvn -B verify
       - name: JUNIT Test Report Tool
