@@ -41,7 +41,9 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Run tests with Maven
-        run: mvn -B test --file pom.xml
+        working-directory: github-actions-java-maven
+#        run: mvn -B test --file pom.xml
+        run: mvn -B verify
       - name: JUNIT Test Report Tool
         uses: mikepenz/action-junit-report@v3
         if: always() # always run even if the previous step fails
