@@ -4,11 +4,35 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.*;
 
 public class CodeRunner {
 
     public static void main(String[] args) {
+        CodeRunner.GivenAnArrayRunner();
+        CodeRunner.GivenStringsRunner();
+        CodeRunner.GivenAListRunner();
 
+    }
+
+    static void GivenAListRunner(){
+
+        ListNode mylist = new ListNode();
+        mylist.addElement(1);
+        mylist.addElement(2);
+        mylist.addElement(3);
+        mylist.addElement(4);
+        mylist.addElement(5);
+
+        System.out.println(GivenAList.reverseList(mylist));  //prints the new head
+        System.out.println(GivenAList.reverseList(mylist).value);  //prints the value of the new head
+    }
+    static void GivenStringsRunner(){
+        System.out.println(GivenStrings.isIsomorphic("egg", "add"));
+        System.out.println(GivenStrings.isIsomorphic("piper", "title"));
+        System.out.println(GivenStrings.isIsomorphic("foo", "bar"));
+    }
+    static void GivenAnArrayRunner() {
         System.out.println(GivenAnArray.BinarySearch( new int[]{-1,0,3,5,9,12},9));
         System.out.println(GivenAnArray.BinarySearch(new int[] {5,6,7,9,24,31}, 9));
 
@@ -42,7 +66,6 @@ public class CodeRunner {
         System.out.println(GivenAnArray.pivotIndex(new int[]{2,1,-1})); //0
         System.out.println(GivenAnArray.pivotIndex(new int[]{-1,-1,-1,-1,-1,0}));  //2
         System.out.println(GivenAnArray.pivotIndex(new int[]{-1,-1}));  //-1
-
 
     }
 }
