@@ -1,4 +1,6 @@
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class GivenAnArray {
 
@@ -106,12 +108,12 @@ public class GivenAnArray {
      * Note - we can use the HashSet instead of HashMap since both have same space complexity O(n)
      */
     static boolean ContainsDuplicate(int[] nums){
-        HashMap<Integer, Integer> temp = new HashMap<>();
+        HashSet<Integer> temp = new HashSet<>();
         for(int i=0; i<nums.length; i++){
-            if(temp.containsValue(nums[i])){
+            if(temp.contains(nums[i])){
                 return true;
             }
-            temp.put(i, nums[i]);
+            temp.add(nums[i]);
         }
         return false;
     }
@@ -209,5 +211,20 @@ public class GivenAnArray {
 
         }
         return pIndex;
+    }
+
+    static List<Integer> addtoArrayForm(int[] num, int k){
+        List<Integer> returnList = new ArrayList<>();
+
+     //   returnList = Arrays.stream(num).boxed().collect(Collectors.toList());
+        int n = num.length, i=n-1;
+        while(i>=0 || k>0){
+            if(i>=0) k += num[i];
+            returnList.add(k%10);
+            k=k/10;
+            i--;
+        }
+        Collections.reverse(returnList);
+        return returnList;
     }
 }

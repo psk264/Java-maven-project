@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.HashMap;
 
 public class GivenStrings {
@@ -25,5 +26,56 @@ public class GivenStrings {
             index++;
         }
         return true;
+    }
+
+    public static String longestPalindrome(String s) {
+        String returnString = "";
+        //babad >> bab, aba
+        //babab >> babab
+        //cbbd >> bb
+        int resultLength = 1;
+        int start=0, end=0;
+        //odd length string case
+        for(int index=0; index<s.length()-1;index++)
+        {
+            int left = index, right = index;
+            while (left >= 0 && right < s.length()) {
+                if(s.substring(left).equals(s.substring(right))){
+                    left -= 1;
+                    right += 1;
+                }
+                else{
+                    break;
+                }
+                if (right - left + 1 > resultLength) {
+                        resultLength = right - left + 1;
+                        start=left+1;
+                        end=right-1;
+                    }
+
+            }
+        }
+    //even length string case
+        for(int index=0; index<s.length()-1;index++)
+        {
+            int left = index, right = index+1;
+            while (left >= 0 && right < s.length()) {
+                if(s.substring(left).equals(s.substring(right))){
+                    left -= 1;
+                    right += 1;
+                }
+                else{
+                    break;
+                }
+                if (right - left + 1 > resultLength) {
+                    resultLength = right - left + 1;
+                    start=left+1;
+                    end=right-1;
+                }
+
+            }
+        }
+        returnString = s.substring(start,end);
+        return returnString;
     }
 }
