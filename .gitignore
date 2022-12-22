@@ -3,3 +3,9 @@
 
 # Log file
 *.log
+
+.idea/libraries
+.idea/workspace.xml
+.idea/*.xml
+.github
+/out/
