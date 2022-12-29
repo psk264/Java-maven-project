@@ -9,15 +9,21 @@ import java.util.*;
 public class CodeRunner {
 
     public static void main(String[] args) {
+        System.out.println("**********************************************************************************");
         System.out.println("-------------------------\n------GivenAnArray---------\n-------------------------");
         CodeRunner.GivenAnArrayRunner();
-        System.out.println("**********************************************************************************");
+        System.out.println("*************************************END of GivenAnArray*********************************************");
         System.out.println("-------------------------\n------GivenStrings---------\n-------------------------");
         CodeRunner.GivenStringsRunner();
-        System.out.println("**********************************************************************************");
+        System.out.println("**************************************END of GivenAStringRunner********************************************");
         System.out.println("-------------------------\n------GivenAList---------\n-------------------------");
         CodeRunner.GivenAListRunner();
-        System.out.println("**********************************************************************************");
+        System.out.println("***********************************END of GivenAListRunner***********************************************");
+        System.out.println("-------------------------\n------GivenANumber---------\n-------------------------");
+        CodeRunner.GivenANumberRunnder();
+        System.out.println("***************************************END of GivenANumberRunner*******************************************");
+
+
 
     }
 
@@ -45,6 +51,16 @@ public class CodeRunner {
 
         System.out.println("------longestPalindrome---------");
         System.out.println(GivenStrings.longestPalindrome("babad"));
+        System.out.println(GivenStrings.longestPalindrome("cbbd"));
+
+        System.out.println("------reverseString---------");
+        System.out.println(GivenStrings.reverseString("babad"));
+
+        System.out.println("------isAnagram---------");
+        System.out.println(GivenStrings.isAnagram("anagram", "margana"));
+        System.out.println(GivenStrings.isAnagram("babad", "hello"));
+
+
 
     }
     static void GivenAnArrayRunner() {
@@ -90,5 +106,13 @@ public class CodeRunner {
         System.out.println(GivenAnArray.addtoArrayForm(new int[]{2,1,5}, 806));
         System.out.println(GivenAnArray.addtoArrayForm(new int[]{0}, 23));
         System.out.println(GivenAnArray.addtoArrayForm(new int[]{0}, 1000));
+
+        System.out.println("------reverseNumber---------");
+        System.out.println(GivenAnArray.reverseNumber(34));
+    }
+
+    static void GivenANumberRunnder() {
+        System.out.println(GivenANumber.reverseBits(Integer.parseUnsignedInt("11111111111111111111111111111101",2)));
+        System.out.println(GivenANumber.reverseBits(Integer.parseUnsignedInt("00000010100101000001111010011100", 2)));
     }
 }

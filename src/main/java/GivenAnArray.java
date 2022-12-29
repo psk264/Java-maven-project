@@ -2,6 +2,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static java.lang.Thread.enumerate;
+
 public class GivenAnArray {
 
     /**
@@ -215,7 +217,6 @@ public class GivenAnArray {
 
     static List<Integer> addtoArrayForm(int[] num, int k){
         List<Integer> returnList = new ArrayList<>();
-
      //   returnList = Arrays.stream(num).boxed().collect(Collectors.toList());
         int n = num.length, i=n-1;
         while(i>=0 || k>0){
@@ -226,5 +227,17 @@ public class GivenAnArray {
         }
         Collections.reverse(returnList);
         return returnList;
+    }
+
+    public static int reverseNumber(int num){
+
+        if(num>=0 && num<10) return num;
+        int ans = 0;
+        while(num!=0){
+            ans = ans*10 + num%10;
+            num /=10;
+        }
+        return ans;
+
     }
 }
