@@ -6,7 +6,7 @@ public class GivenStrings {
      * @param given string s
      * @param given string t
      * @return Boolean value to determine if given strings are isomorphic.  Two strings s and t are isomorphic if the characters in s can be replaced to get t.
-     * Time Complexity O(n) (iterate thru strings and add to HashMap in O(1)), Space complexity O(n) >> hashmaps
+     * Time Complexity O(n) (iterate thru strings and add to HashMap in O(1)) ; Space complexity O(n) >> hashmaps
      **/
     public static boolean isIsomorphic(String s, String t) {
         if(s.length()!=t.length()) return false;

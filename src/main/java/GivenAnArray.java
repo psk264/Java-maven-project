@@ -12,7 +12,7 @@ public class GivenAnArray {
      * @return int index
      */
      static  int BinarySearch(int[] nums, int target) {
-            int index=-1;
+            int returnIndex=-1;
             int end=nums.length-1;
             int start = 0;
 
@@ -30,7 +30,7 @@ public class GivenAnArray {
 
             if(nums[start]==target) return start;
             else
-                return index;
+                return returnIndex;
     }
 
     /**
@@ -229,15 +229,7 @@ public class GivenAnArray {
         return returnList;
     }
 
-    public static int reverseNumber(int num){
 
-        if(num>=0 && num<10) return num;
-        int ans = 0;
-        while(num!=0){
-            ans = ans*10 + num%10;
-            num /=10;
-        }
-        return ans;
 
-    }
+
 }

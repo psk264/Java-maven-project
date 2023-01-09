@@ -41,7 +41,20 @@ public class CodeRunner {
         System.out.println(GivenAList.reverseList(mylist).value);
 
         System.out.println("------middleNode---------");
-        System.out.print(GivenAList.middleNode(mylist).value); //prints the new list
+        System.out.print(GivenAList.middleNode(mylist).value);//prints the new list
+        System.out.println();
+        
+        System.out.println("------getMedian---------");
+        System.out.println(GivenAList.getMedian(new ArrayList<Integer>() {
+            {
+                add(1);
+                add(2);
+                add(9);
+                add(5);
+                add(6);
+            }
+        }));
+        System.out.println("------End of getMedian---------");
     }
     static void GivenStringsRunner(){
         System.out.println("------isIsomorphic---------");
@@ -106,13 +119,20 @@ public class CodeRunner {
         System.out.println(GivenAnArray.addtoArrayForm(new int[]{2,1,5}, 806));
         System.out.println(GivenAnArray.addtoArrayForm(new int[]{0}, 23));
         System.out.println(GivenAnArray.addtoArrayForm(new int[]{0}, 1000));
+        System.out.println("------End of addtoArrayForm---------");
 
-        System.out.println("------reverseNumber---------");
-        System.out.println(GivenAnArray.reverseNumber(34));
+
+
     }
 
     static void GivenANumberRunnder() {
+        System.out.println("------reverseNumber---------");
+        System.out.println(GivenANumber.reverseNumber(34));
+
+        System.out.println("------parseUnsignedInt---------");
         System.out.println(GivenANumber.reverseBits(Integer.parseUnsignedInt("11111111111111111111111111111101",2)));
         System.out.println(GivenANumber.reverseBits(Integer.parseUnsignedInt("00000010100101000001111010011100", 2)));
     }
+
+
 }
