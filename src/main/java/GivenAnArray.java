@@ -2,6 +2,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
+import static java.lang.Thread.enumerate;
+
 public class GivenAnArray {
 
     /**
@@ -10,7 +12,7 @@ public class GivenAnArray {
      * @return int index
      */
      static  int BinarySearch(int[] nums, int target) {
-            int index=-1;
+            int returnIndex=-1;
             int end=nums.length-1;
             int start = 0;
 
@@ -28,7 +30,7 @@ public class GivenAnArray {
 
             if(nums[start]==target) return start;
             else
-                return index;
+                return returnIndex;
     }
 
     /**
@@ -215,7 +217,6 @@ public class GivenAnArray {
 
     static List<Integer> addtoArrayForm(int[] num, int k){
         List<Integer> returnList = new ArrayList<>();
-
      //   returnList = Arrays.stream(num).boxed().collect(Collectors.toList());
         int n = num.length, i=n-1;
         while(i>=0 || k>0){
@@ -227,4 +228,8 @@ public class GivenAnArray {
         Collections.reverse(returnList);
         return returnList;
     }
+
+
+
+
 }

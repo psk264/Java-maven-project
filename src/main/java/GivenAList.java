@@ -1,4 +1,5 @@
 import java.rmi.dgc.Lease;
+import java.util.Collections;
 import java.util.List;
 
 public class GivenAList {
@@ -29,6 +30,17 @@ public class GivenAList {
             fastpointer = fastpointer.next.next;
         }
         return middle;
+    }
+
+    public static int getMedian(List<Integer> num){
+        if(num.size() <1 ) return -1;
+        if(num.size() ==1) return num.get(0);
+        int size = num.size();
+        int medianIndex = size/2;
+
+        Collections.sort(num);  // Time complexity O(nlogn)
+        return num.get(medianIndex);
+
     }
 
 }
