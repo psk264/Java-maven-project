@@ -1,5 +1,4 @@
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.*;
 
 public class GivenStrings {
     /**
@@ -134,4 +133,66 @@ public class GivenStrings {
         return true;
 
     }
+
+    public static void queueMethod(){
+        Stack<String> priorityQueuequeue = new Stack<>();
+        Queue<String> arrayDequeue = new ArrayDeque<>(4);
+
+        priorityQueuequeue.add("banana");
+        priorityQueuequeue.add("apple");
+        priorityQueuequeue.add("kiwi");
+        priorityQueuequeue.add("strawberry");
+
+        arrayDequeue.add("banana");
+        arrayDequeue.add("apple");
+        arrayDequeue.add("kiwi");
+        arrayDequeue.add("strawberry");
+
+        System.out.println(priorityQueuequeue);
+        System.out.println(arrayDequeue);
+
+        priorityQueuequeue.pop();
+        arrayDequeue.poll();
+
+        System.out.println(priorityQueuequeue);
+        System.out.println(arrayDequeue);
+
+
+    }
+//aabbbaaa -> aa#3b#3a
+
+    public static String stringParser(String inputString){
+        if(inputString.length()<=1) return inputString;
+        String parseString ="";
+        int n=inputString.length();
+      //  HashMap<Character, Integer> mapping = new HashMap<>();
+        int counter=0,i=0;
+        char ch = inputString.charAt(0);
+        while(i<n){
+             ch = inputString.charAt(i);
+             counter=1;
+            for(int j=i+1; j<n;j++){
+                if(ch != inputString.charAt(j)) {
+                    if(counter >=3)
+                        parseString = parseString + "#" + counter + ch;
+                    else
+                        parseString += String.valueOf(ch).repeat(counter);
+                    break;
+                }
+                counter++;
+            }
+//            if(counter >=3)
+//                 parseString = parseString + "#" + counter + ch;
+            i+=counter;
+        }
+        if(counter >=3)
+            parseString = parseString + "#" + counter + ch;
+        else
+            parseString += String.valueOf(ch).repeat(counter);
+
+        return parseString;
+
+        }
+
+
 }

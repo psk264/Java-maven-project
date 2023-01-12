@@ -10,7 +10,7 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master" , "develop"]
   pull_request:
     branches: [ "master" ]
 
@@ -53,3 +53,11 @@ jobs:
         if: always() # always run even if the previous step fails
         with:
           report_paths: '**/build/test-results/test/TEST-*.xml'
+      - name: Run Junit tests
+        uses: actions/checkout@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
+      - name: Run the Maven verify phase
+        run: mvn --batch-mode --update-snapshots verify

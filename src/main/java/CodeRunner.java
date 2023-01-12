@@ -73,6 +73,8 @@ public class CodeRunner {
         System.out.println(GivenStrings.isAnagram("anagram", "margana"));
         System.out.println(GivenStrings.isAnagram("babad", "hello"));
 
+        GivenStrings.queueMethod();
+        System.out.println(GivenStrings.stringParser("aabbbaaa"));
 
 
     }
